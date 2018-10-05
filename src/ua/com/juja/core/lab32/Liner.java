@@ -26,7 +26,7 @@ public class Liner extends AbstractShip {
     }
 }
 
-abstract class AbstractShip implements Comparable {
+abstract class AbstractShip implements Comparable{
     private String name;
     private float length;
     private float width;
@@ -85,7 +85,7 @@ class Tanker extends AbstractShip {
 
 class Cargo extends AbstractShip {
     private float tonnage;
-    public static final float DEFAULT_RENTAL = 550;
+    public static final float DEFAULT_RENTAL=550;
 
     public Cargo(String name, float length, float width, float displacement, float tonnage) {
         super(name, length, width, displacement);
@@ -110,13 +110,12 @@ class OdessaSeaPort {
 
     public static String sortSumPaymentAsc(AbstractShip[] arrayShips) {
         String result = "";
-        if (arrayShips != null) {
-            Arrays.sort(arrayShips);
-            for (int i = 0; i < arrayShips.length; i++) {
-                result += arrayShips[i].getName() + "=" + arrayShips[i].calculatePayment();
-            }
+        if (arrayShips == null)
+            return result;
+        Arrays.sort(arrayShips);
+        for (int i = 0; i < arrayShips.length; i++) {
+            result += arrayShips[i].getName() + "=" + arrayShips[i].calculatePayment();
         }
         return result;
-
     }
 }

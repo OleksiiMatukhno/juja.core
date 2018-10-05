@@ -1,9 +1,5 @@
 package ua.com.juja.core.lab31;
 
-import com.sun.deploy.util.ArrayUtil;
-
-import java.util.Arrays;
-
 public class Liner extends AbstractShip {
 
     private int passengers;

@@ -18,5 +18,6 @@ public class Test1 {
         }
 
         System.out.print("OK");
+
     }
 }

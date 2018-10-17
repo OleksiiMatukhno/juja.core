@@ -9,7 +9,7 @@ public class Test {
         String actual = BigIntegerUtils.toBitStr(k);
 
         if (!expected.equals(actual)) {
-            throw new AssertionError();
+            throw new AssertionError("expected: " + expected + " but actual: " + actual);
         }
 
         System.out.print("OK");

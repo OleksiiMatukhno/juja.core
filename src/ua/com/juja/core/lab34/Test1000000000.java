@@ -18,7 +18,7 @@ public class Test1000000000 {
         String actual = BigIntegerUtils.toBitStr(k);
 
         if (!expected.equals(actual)) {
-            throw new AssertionError("expected: " + expected.toString() + "but actual: " + actual.toString());
+            throw new AssertionError("expected: " + expected + "but actual: " + actual);
         }
 
         System.out.print("OK");

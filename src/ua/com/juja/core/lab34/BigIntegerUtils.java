@@ -8,17 +8,10 @@ public class BigIntegerUtils {
         String result = "";
         for (int i = byteArray.length - 1; i >= 0; i--) {
             String nextByte = Integer.toBinaryString(byteArray[i]);
-
-            if (nextByte.length() > 8)
-                nextByte = nextByte.substring(nextByte.length() - 8);
-
-            if (i > 0) {
-                while (nextByte.length() < 8)
-                    nextByte = '0' + nextByte;
-            } else if (byteArray.length > 1 && nextByte.equals("0"))
-                return result;
-
-            result = nextByte + result;
+            result = i != 0 ? ("00000000" + nextByte).substring(nextByte.length()) + result
+                    : !nextByte.equals("0") ? nextByte + result
+                    : byteArray.length == 1 ? nextByte
+                    :result;
         }
         return result;
     }
